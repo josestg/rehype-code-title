@@ -1,5 +1,9 @@
 # Rehype Code Title
 
+[![Build Status](https://travis-ci.com/josestg/rehype-code-title.svg?token=1ZtvVXXQrZXVL8domfez&branch=master)](https://travis-ci.com/josestg/rehype-code-title)
+![release](https://badgen.net/github/release/josestg/rehype-code-title)
+![npm](https://badgen.net/npm/v/rehype-code-title)
+
 [Rehype](https://github.com/rehypejs/rehype) plugin to add code title.
 
 ## Install
