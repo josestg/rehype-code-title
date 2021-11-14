@@ -1,7 +1,5 @@
 import type { Plugin } from "unified";
 
-export type Options = {
-  className?: string;
-};
+declare const rehypeCodeTitle: Plugin<[{ className?: string }]>;
 
-export default function rehypeCodeTitle(opts?: Options): Plugin;
+export default rehypeCodeTitle;
