@@ -1,5 +1,5 @@
-const visit = require("unist-util-visit")
-const h = require("hastscript")
+import { visit } from "unist-util-visit"
+import { h } from "hastscript"
 
 function codeTitle(opt) {
   const className = (opt && opt.className) || "rehype-code-title"
@@ -26,4 +26,4 @@ function codeTitle(opt) {
   }
 }
 
-module.exports = codeTitle
+export {codeTitle as default}
