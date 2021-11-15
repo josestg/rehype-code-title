@@ -41,13 +41,12 @@ export default class App extends NextApp {
 **rehype-code-title:**
 
 ```js
-const unified = require("unified")
-const remark = require("remark-parse")
-const remark2rehype = require("remark-rehype")
-const stringify = require("rehype-stringify")
-const vfile = require("to-vfile")
-
-const codeTitle = require("rehype-code-title")
+import { unified } from "unified"
+import remark from "remark-parse"
+import remark2rehype from "remark-rehype"
+import stringify from "rehype-stringify"
+import codeTitle from "./index.js"
+import * as vfile from "to-vfile"
 
 function compile(file, opt) {
   return unified()
@@ -55,17 +54,18 @@ function compile(file, opt) {
     .use(remark2rehype)
     .use(codeTitle, opt)
     .use(stringify)
-    .processSync(vfile.readSync("./**example**/" + file))
+    .processSync(vfile.readSync("./__example__/" + file))
     .toString()
 }
+
+const got = compile("1.md")
+console.log(got)
 ```
 
 **Yields:**
 
 ```html
-<div class="my-code">
-  <h1>pages/_app.tsx</h1>
-  <pre><code class="language-tsx">export default class App extends NextApp {
+<pre><code class="language-tsx">export default class App extends NextApp {
   render() {
     const { Component, pageProps } = this.props
     return (
@@ -79,5 +79,4 @@ function compile(file, opt) {
   }
 }
 </code></pre>
-</div>
 ```

@@ -1,10 +1,10 @@
-const unified = require("unified")
-const remark = require("remark-parse")
-const remark2rehype = require("remark-rehype")
-const stringify = require("rehype-stringify")
-const codeTitle = require("./index")
-const assert = require("assert")
-const vfile = require("to-vfile")
+import { unified } from "unified"
+import remark from "remark-parse"
+import remark2rehype from "remark-rehype"
+import stringify from "rehype-stringify"
+import codeTitle from "./index.js"
+import assert from "assert"
+import * as vfile from "to-vfile"
 
 function compile(file, opt) {
   return unified()
